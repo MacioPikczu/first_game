@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Island</title>
+    
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+
+<body>
+    <main>
+        <a href="home" class="btn-log">Island game</a>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+
+</html>
