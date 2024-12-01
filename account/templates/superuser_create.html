@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Create Superuser{% endblock %}
+
+{% block content %}
+    <h2>Create Superuser</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register Account</button>
+    </form>
+{% endblock %}

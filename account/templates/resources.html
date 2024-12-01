@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Resources{% endblock %}
+{% block content %}
+<br>
+username: {{ username }} <br>
+    {% if user.is_authenticated %}
+        Hi {{ user.username }}
+
+        <form action="{% url 'home' %}" method="get">
+            {% csrf_token %}
+            <br><br>
+            {% for i in all_resources %}
+                {{ i.name }}: {{ i.quantity }} <br>
+            {% endfor %}
+            <a href="{% url 'home' %}" class="btn">Home</a>
+        </form>
+    {% else %}
+        <p>You are not logged in!</p>
+        <a href="{% url 'login' %}" class="btn">Log In</a>
+        <br><br>
+        <a href="{% url 'signup' %}" class="btn">Sign Up</a>
+        <br><br>
+{#        <a href="{% url 'createsuper' %}" class="btn">Create SuperUser</a>#}
+    {% endif %}
+{% endblock %}
+
+{# poprawic #}
